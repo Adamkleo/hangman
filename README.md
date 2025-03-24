@@ -19,12 +19,12 @@ A command-line implementation of the Hangman Game to practice applications of SO
 ```
 .
 ├── game/
-│   ├── game_session.py       # Game session manager
+│   ├── ession.py       # Game session manager
 │   ├── round.py              # Logic for a single round
-│   ├── game_summary.py       # Summary and performance stats
+│   ├── summary.py       # Summary and performance stats
 │   ├── hangman.py            # Word loading and validation
 │   ├── hangman_art.py        # ASCII art for hangman stages
-│   ├── game_logger.py        # CSV logging for games and rounds
+│   ├── logger.py        # CSV logging for games and rounds
 │   └── utils.py              # CSV writing utility
 ├── statistics.ipynb          # Notebook for data analysis
 ├── words.csv                 # CSV file with 30 valid words
