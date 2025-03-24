@@ -1,0 +1,10 @@
+game_id,word,username,round_id,user_attempts,victory
+6d42e75e-2b69-470e-89bf-c3508ce41865,grapes,Adam,d16b41f1-cda7-47e4-b137-936ba67df652,15,False
+6d42e75e-2b69-470e-89bf-c3508ce41865,pepper,Adam,a206cd5c-3845-42ab-af46-acb3d11f6c80,13,False
+6d42e75e-2b69-470e-89bf-c3508ce41865,onion,Adam,05db9a1d-81bb-4355-9fbc-b672f8b78c22,5,True
+fe4aafd0-fed7-4daa-a152-1710ac5bccd1,rocket,adam,4654daf9-6f79-44e5-badc-ffed90af37f1,15,False
+fe4aafd0-fed7-4daa-a152-1710ac5bccd1,castle,adam,fae65a43-61f1-4c97-b6fd-ef9ef4ff5cda,14,True
+fe4aafd0-fed7-4daa-a152-1710ac5bccd1,desert,adam,543c95b1-c3f8-4aeb-919c-fa5d78e96877,14,False
+396573fc-dd5e-4f60-8c2d-e13d416e8872,planet,adam,e332adae-f8aa-4870-b1e0-9fc7539214d8,16,True
+396573fc-dd5e-4f60-8c2d-e13d416e8872,cherry,adam,b1ab37e7-c2a4-43be-aaf7-86e504594cb6,13,True
+396573fc-dd5e-4f60-8c2d-e13d416e8872,rocket,adam,79d00c90-39f5-402d-bd4f-e44f5b1de156,17,False

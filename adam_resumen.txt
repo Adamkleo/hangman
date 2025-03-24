@@ -1,0 +1,6 @@
+Jugador: adam
+Palabras: planet, cherry, rocket
+Aciertos: 2/3
+Intentos totales: 31
+Tasa de éxito: 67%
+Medalla: Muy bien
