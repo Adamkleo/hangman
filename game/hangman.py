@@ -1,52 +1,85 @@
 import csv
 from statistics import mean
 import sys
+from typing import List
+
 
 class Hangman:
-    def __init__(self, words_path):
-        self.words_path = words_path
-        self.words = self._load_words()
-        
-        # Validation: Ensure exactly 30 words**
-        if self.get_number_of_words() != 30:
-            print("Oops, we can't start the game. Expected 30 words.")
-            sys.exit(1)  # Terminates the program safely
+    """
+    Clase que gestiona la carga y validación de palabras para el juego del Ahorcado.
+    """
 
+    def __init__(self, words_path: str) -> None:
+        """
+        Inicializa la instancia cargando las palabras desde el archivo CSV.
+
+        Args:
+            words_path (str): Ruta al archivo CSV que contiene las palabras.
+        """
+        self.words_path = words_path
+        self.words: List[str] = self._load_words()
+        
+        # Validación: asegurarse de que haya exactamente 30 palabras
+        if self.get_number_of_words() < 30:
+            print("Ups, no podemos comenzar el juego. Se esperaban 30 palabras.")
+            sys.exit(1)  # Finaliza el programa de forma segura
+
+        # Validación: detectar palabras duplicadas
         if self.has_duplicates():
-            print("Oops, we can't start the game. Duplicate words found.")
+            print("Ups, no podemos comenzar el juego. Se encontraron palabras duplicadas.")
             sys.exit(1)
 
-        print("Words are ready, let's go!")  # Success message
-    
-    def _load_words(self):
-        """Loads words from a CSV file safely."""
-        words = []
+        print("¡Las palabras están listas, vamos allá!")  # Mensaje de éxito
+
+    def _load_words(self) -> List[str]:
+        """
+        Carga las palabras desde un archivo CSV de forma segura.
+
+        Returns:
+            List[str]: Lista de palabras válidas (mínimo 5 caracteres).
+        """
+        words: List[str] = []
         try:
             with open(self.words_path, 'r', encoding='utf-8') as f:
                 reader = csv.reader(f)
                 for row in reader:
                     for word in row:
                         word = word.strip()
-                        if len(word) >= 5:  # Ensure the word is valid
+                        if len(word) >= 5:
                             words.append(word)
         except FileNotFoundError:
-            print(f"Error: File '{self.words_path}' not found.")
-            sys.exit(1)  # Stop execution if file is missing
+            print(f"Error: No se encontró el archivo '{self.words_path}'.")
+            sys.exit(1)
         except Exception as e:
-            print(f"Error reading file: {e}")
+            print(f"Error al leer el archivo: {e}")
             sys.exit(1)
         return words
 
-    def get_number_of_words(self):
-        """Returns the number of words loaded."""
+    def get_number_of_words(self) -> int:
+        """
+        Devuelve el número total de palabras cargadas.
+
+        Returns:
+            int: Cantidad de palabras.
+        """
         return len(self.words)
 
-    def has_duplicates(self):
-        """Checks if there are duplicate words."""
+    def has_duplicates(self) -> bool:
+        """
+        Verifica si hay palabras duplicadas.
+
+        Returns:
+            bool: True si hay duplicados, False en caso contrario.
+        """
         return len(self.words) != len(set(self.words))
 
-    def calculate_summary(self):
-        """Returns a summary of the words dataset."""
+    def calculate_summary(self) -> dict:
+        """
+        Calcula un resumen de las palabras cargadas.
+
+        Returns:
+            dict: Diccionario con estadísticas de las palabras.
+        """
         if not self.words:
             return {
                 "number_of_words": 0,
