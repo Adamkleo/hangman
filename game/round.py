@@ -1,6 +1,7 @@
-from game.hangman_art import HangmanArt
 import random
 from typing import Set
+
+from game.hangman_art import HangmanArt
 
 
 class Round:

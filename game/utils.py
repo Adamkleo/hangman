@@ -1,5 +1,4 @@
-import csv
-import os
+import csv, os
 
 def append_to_csv(file_path, row_data, fieldnames):
     """Appends a row to a CSV file, writes headers if file is new/empty"""

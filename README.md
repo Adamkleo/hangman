@@ -72,5 +72,11 @@ This project is licensed for educational and personal use.
 
 
 
+## Potential improvements
 
+1 - Customize the hangman drawing with different styles.
+2 - Allow the player to choose the difficulty level (more or fewer available attempts).
+3 - The drawing could be done using a visualization library, by inserting a sequence of images, or with a visual interface instead of in the console.
+4 - You can interpret "more difficult" as any of those options you mentioned. You could create your own difficulty levels. You could also implement an infinite game mode where the complexity progressively increases using any parameter you choose.
+5 - In the Plotly one, you can also consider styling elements, labels, and colors.
 

@@ -1,7 +1,9 @@
 import uuid
-from datetime import datetime
-from game.utils import append_to_csv
 from typing import List
+from datetime import datetime
+
+from game.utils import append_to_csv
+from game.round import Round
 
 
 class GameLogger:
@@ -10,7 +12,7 @@ class GameLogger:
     guardando los datos en archivos CSV para análisis o persistencia.
     """
 
-    def log_game(self, player_name: str, rounds: List['Round']) -> None:
+    def log_game(self, player_name: str, rounds: List[Round]) -> None:
         """
         Registra una partida completa y sus rondas en archivos CSV.
 

@@ -1,9 +1,10 @@
+import random
+from typing import List, Set
+
 from game.summary import GameSummary
 from game.hangman import Hangman
 from game.logger import GameLogger
 from game.round import Round
-from typing import List, Set
-import random
 
 
 class GameSession:
@@ -22,6 +23,8 @@ class GameSession:
         self.player_name: str | None = None
         self.rounds: List[Round] = [] # Rondas del juego
         self.used_words: Set[str] = set() # Palabras usadas
+        
+
 
     def start(self) -> None:
         """

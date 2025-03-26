@@ -1,7 +1,7 @@
-import csv
-from statistics import mean
-import sys
+import csv, sys, time
+
 from typing import List
+from statistics import mean
 
 
 class Hangman:
@@ -19,9 +19,9 @@ class Hangman:
         self.words_path = words_path
         self.words: List[str] = self._load_words()
         
-        # Validación: asegurarse de que haya exactamente 30 palabras
+        # Validación: asegurarse de que haya mas de 30 palabras
         if self.get_number_of_words() < 30:
-            print("Ups, no podemos comenzar el juego. Se esperaban 30 palabras.")
+            print("Ups, no podemos comenzar el juego. Se esperaban al menos 30 palabras.")
             sys.exit(1)  # Finaliza el programa de forma segura
 
         # Validación: detectar palabras duplicadas
@@ -29,7 +29,8 @@ class Hangman:
             print("Ups, no podemos comenzar el juego. Se encontraron palabras duplicadas.")
             sys.exit(1)
 
-        print("¡Las palabras están listas, vamos allá!")  # Mensaje de éxito
+        self._loading_animation()
+        print("Las palabras estan listas para jugar!")
 
     def _load_words(self) -> List[str]:
         """
@@ -97,3 +98,19 @@ class Hangman:
             "longest_word": max(self.words, key=len),
             "shortest_word": min(self.words, key=len)
         }
+
+
+    def _loading_animation(self) -> None:
+        """
+        Loading animation.
+        """
+        print("Cargando Palabras: ", end="", flush=True)
+        bar_length = 10
+        for i in range(1, bar_length + 1):
+            progress = "█" * i + "-" * (bar_length - i)
+            print(f"\rCargando Palabras:  [{progress}]", end="", flush=True)
+            time.sleep(0.3)
+        print()  
+
+
+
