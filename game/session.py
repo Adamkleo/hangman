@@ -23,7 +23,7 @@ class GameSession:
         self.player_name: str | None = None
         self.rounds: List[Round] = [] # Rondas del juego
         self.used_words: Set[str] = set() # Palabras usadas
-        
+
 
 
     def start(self) -> None:
