@@ -1,5 +1,4 @@
 import csv, sys, time
-
 from typing import List
 from statistics import mean
 
